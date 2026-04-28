@@ -1,0 +1,178 @@
+/* ===== ГЛОБАЛЬНЫЕ СТИЛИ ДЛЯ КОРНЕВОГО ЭЛЕМЕНТА ===== */
+/* Корневой элемент React - точка входа приложения */
+#root {
+  text-align: center;           /* Выравнивание текста по центру */
+  width: 100vw;                /* Ширина на всю ширину окна */
+  height: 100vh;               /* Высота на всю высоту окна */
+  background-image: url("i.webp"); /* Фоновое изображение */
+  background-size: cover;      /* Изображение покрывает весь фон */
+}
+
+/* ===== БЛОК С КУРСАМИ ВАЛЮТ И ПОГОДОЙ ===== */
+.info {
+  display: flex;               /* Используем Flexbox для выравнивания */
+  justify-content: center;     /* Горизонтальное выравнивание по центру */
+  height: 100px;               /* Фиксированная высота блока */
+  align-self: center;          /* Вертикальное выравнивание по центру родителя */
+}
+
+/* Стили для блока с курсами валют */
+.money {
+  color: #fff;                 /* Белый цвет текста */
+  border: solid;               /* Сплошная рамка */
+  border-radius: 5px;          /* Скругление углов */
+  height: 80%;                 /* Высота 80% от родителя */
+  float: inline-start;         /* Плавающий элемент слева */
+  padding: 2% 1% 0%;           /* Внутренние отступы: сверху, справа, снизу */
+}
+
+/* ===== БЛОК С ПОГОДОЙ ===== */
+.weather-info {
+  color: #fff;                 /* Белый цвет текста */
+  border: solid;               /* Сплошная рамка */
+  border-radius: 5px;          /* Скругление углов */
+  height: 80%;                 /* Высота 80% от родителя */
+  float: inline-end;           /* Плавающий элемент справа */
+  padding: 1%;                 /* Внутренние отступы со всех сторон */
+}
+
+/* Иконка погоды */
+.weather-info .weather-icon {
+  display: inline-block;       /* Отображается как строчно-блочный элемент */
+  cursor: pointer;             /* Курсор в виде руки при наведении */
+  float: right;                /* Плавающий элемент справа */
+  font-size: 22px;             /* Размер шрифта */
+  position: relative;          /* Относительное позиционирование */
+  left: -4px;                  /* Смещение влево */
+  bottom: 5px;                 /* Смещение вниз */
+}
+
+/* ===== ЗАГОЛОВОК СПИСКА ЗАДАЧ ===== */
+.list-header {
+  color: aliceblue;            /* Светло-голубой цвет */
+  size: 20px;                  /* Размер шрифта */
+  padding-top: 1%;             /* Отступ сверху */
+}
+
+/* ===== КОМПОНЕНТ ОДНОЙ ЗАДАЧИ ===== */
+.item-todo {
+  padding: 14px;               /* Внутренние отступы */
+  margin: 0 auto;              /* Выравнивание по центру */
+  text-align: left;            /* Текст выровнен влево */
+  margin-top: 15px;            /* Отступ сверху между задачами */
+  /* Градиентный фон от фиолетового к синему */
+  background: linear-gradient(
+    90deg,
+    rgba(93, 12, 255, 1) 0%,
+    #2ea4db 100%
+  );
+  color: #fff;                 /* Белый текст */
+  border: none;                /* Без рамки */
+  border-radius: 5px;          /* Скругленные углы */
+  cursor: pointer;             /* Курсор-рука при наведении */
+  max-width: 60%;              /* Максимальная ширина 60% экрана */
+}
+
+/* Текст внутри задачи */
+.item-todo .item-text {
+  display: inline-block;       /* Строчно-блочный элемент */
+  cursor: pointer;             /* Курсор-рука при наведении */
+}
+
+/* Кнопка удаления задачи */
+.item-todo .item-delete {
+  display: inline-block;       /* Строчно-блочный элемент */
+  cursor: pointer;             /* Курсор-рука при наведении */
+  float: right;                /* Плавающий элемент справа */
+  font-size: 22px;             /* Крупный шрифт для крестика */
+  position: relative;          /* Относительное позиционирование */
+  left: -4px;                  /* Смещение влево */
+  bottom: 5px;                 /* Смещение вниз */
+}
+
+/* ===== ПОЛЕ ВВОДА ===== */
+input {
+  padding: 14px 32px 14px 16px; /* Внутренние отступы */
+  border-radius: 4px 0 0 4px;  /* Скругление левых углов */
+  border: 3px solid #5d0cff;   /* Фиолетовая рамка */
+  outline: none;               /* Убираем подсветку при фокусе */
+  background: white;           /* Белый фон */
+   color: #000;                 /* чёрный цвет текста */
+  font-size: 16px;             /* размер шрифта */
+  width: 250px;                /* ширина поля */
+}
+
+/* ===== КНОПКА ===== */
+button {
+  padding: 16px 7px;           /* Внутренние отступы */
+  border: none;                /* Без рамки */
+  border-radius: 0 4px 4px 0;  /* Скругление правых углов */
+  cursor: pointer;             /* Курсор-рука при наведении */
+  outline: none;               /* Убираем подсветку при фокусе */
+  /* Градиентный фон */
+  background: linear-gradient(
+    90deg,
+    rgba(93, 12, 255, 1) 0%,
+    #2ea4db 100%
+  );
+  color: #fff;                 /* Белый текст */
+  text-transform: capitalize;  /* Первая буква заглавная */
+}
+
+/* ===== УТИЛИТНЫЙ КЛАСС ДЛЯ ЗАЧЁРКНУТОГО ТЕКСТА ===== */
+/* Применяется к выполненным задачам */
+.strike {
+  text-decoration: line-through; /* Зачёркивание текста */
+}
+/* ===== ВИДЕО ФОН ===== */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.video-background video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+/* Затемнение */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  pointer-events: none;  /* Чтобы клики проходили сквозь затемнение */
+}
+
+/* Основной контент */
+.App {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+
+.info {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  align-self: center;
+  margin-top: 20px;
+}

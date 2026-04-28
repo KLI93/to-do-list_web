@@ -1,0 +1,14 @@
+services:
+  web:
+    build: .
+    ports:
+      - "5173:5173"  # Порт Vite
+    volumes:
+      - .:/app
+      - /app/node_modules  # Игнорируем node_modules из хоста
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true  # Для горячей перезагрузки в Docker
+    stdin_open: true
+    tty: true
+    command: npm run dev -- --host
