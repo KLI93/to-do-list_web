@@ -21,14 +21,19 @@ jobs:
         with:
           node-version: 20
 
+      - name: Go to project folder
+        run: cd to-do-list_web
+
       - name: Install dependencies
         run: npm install
+        working-directory: ./to-do-list_web
 
       - name: Build
         run: npm run build
+        working-directory: ./to-do-list_web
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./to-do-list_web/dist
