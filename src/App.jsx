@@ -133,7 +133,7 @@ function App() {
     <>
      <div className="video-background">
         <video autoPlay loop muted playsInline>
-          <source src="/to-do-list_web/background-video.mp4" type="video/mp4" />
+          <source src="./background-video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="overlay"></div> {/* Затемнение */}
@@ -175,7 +175,7 @@ function App() {
                 {/* Иконка погоды с сервера OpenWeatherMap */}
                 <img 
                   className='weather-icon' 
-                  src={`http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`} 
+                  src={`https://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`} 
                   alt="Иконка погоды"
                 />
               </div>
