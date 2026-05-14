@@ -67,24 +67,25 @@ function App() {
 
         // 2. Получаем данные о погоде по геолокации пользователя
         // Запрашиваем текущую позицию
-        navigator.geolocation.getCurrentPosition(async position => {
-          // Получаем широту и долготу
-          const lat = position.coords.latitude;
-          const lon = position.coords.longitude;
+       navigator.geolocation.getCurrentPosition(
+  async (position) => {
+    try {
+      const lat = position.coords.latitude;
+      const lon = position.coords.longitude;
 
-          // Делаем запрос к API погоды с координатами
-          const weatherResponse = await axios.get(
-            `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${weatherApiKey}`
-          );
+      const weatherResponse = await axios.get(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=ru&appid=${weatherApiKey}`
+      );
 
-          // Проверяем наличие данных о погоде
-          if (!weatherResponse.data.main) {
-            throw new Error('Нет данных о погоде.');
-          }
-
-          // Сохраняем данные о погоде
-          setWeatherData(weatherResponse.data);
-        });
+      setWeatherData(weatherResponse.data);
+    } catch (error) {
+      console.error('Ошибка погоды:', error);
+    }
+  },
+  (geoError) => {
+    console.error('Ошибка геолокации:', geoError);
+  }
+);
       } catch (err) {
         // Обрабатываем ошибки
         console.error(err);
@@ -158,7 +159,7 @@ function App() {
                 <div>
                   Погода сегодня: <br />
                   {/* Температура в Цельсиях (из Кельвинов) */}
-                  🌡️ {(weatherData.main.temp - 273.15).toFixed(1)}°C   
+                  🌡️ {weatherData.main.temp.toFixed(1)}°C   
                   {/* Скорость ветра */}
                   ༄.° {weatherData.wind.speed} м/с    
                   {/* Облачность в процентах */}
