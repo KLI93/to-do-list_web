@@ -124,39 +124,20 @@ button {
 .strike {
   text-decoration: line-through; /* Зачёркивание текста */
 }
-/* ===== ВИДЕО ФОН ===== */
-.video-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  overflow: hidden;
-}
 
-.video-background video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-}
-
-/* Затемнение */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-  pointer-events: none;  /* Чтобы клики проходили сквозь затемнение */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    #0f172a 0%,
+    #312e81 35%,
+    #6d28d9 70%,
+    #2563eb 100%
+  );
+  
+  background-attachment: fixed;
+  font-family: Arial, sans-serif;
 }
 
 /* Основной контент */
